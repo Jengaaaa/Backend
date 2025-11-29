@@ -8,8 +8,6 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Builder
 public class User {
 
     @Id
@@ -19,15 +17,26 @@ public class User {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false, unique = true, length = 50)
-    private String name;
+//    @Column(nullable = false, unique = true, length = 50)
+//    private String name;
 
     @Column(nullable = false)
     private String password;
 
-    @Builder.Default
     @Column(nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private String jobType;
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    @Builder
+    public User(String email, String name, String password, String jobType) {
+        this.email = email;
+//        this.name = name;
+        this.password = password;
+        this.jobType = jobType;
+        this.createdAt = LocalDateTime.now();
+    }
 
     public void updatePassword(String encodedPassword) {
         this.password = encodedPassword;

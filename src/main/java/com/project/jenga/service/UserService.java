@@ -19,14 +19,28 @@ public class UserService {
     // 회원가입
     public void signUp(SignUpRequest request) {
 
+        // 이메일 중복 체크
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("이미 존재하는 이메일입니다!");
         }
 
+        // 비밀번호 재확인 체크
+        if (!request.getPassword().equals(request.getConfirmPassword())) {
+            throw new RuntimeException("비밀번호와 비밀번호 확인이 일치하지 않습니다!");
+        }
+
+        // jobType 유효성 검사
+        if (!request.getJobType().equals("firefighter") &&
+                !request.getJobType().equals("police")) {
+            throw new RuntimeException("jobType이 잘못되었습니다! (firefighter / police)");
+        }
+
+        // 비밀번호 암호화 후 저장
         User user = User.builder()
                 .email(request.getEmail())
-                .name(request.getName())
+//                .name(request.getName())
                 .password(passwordEncoder.encode(request.getPassword()))
+                .jobType(request.getJobType())
                 .build();
 
         userRepository.save(user);
