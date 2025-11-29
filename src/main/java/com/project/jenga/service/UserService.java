@@ -25,14 +25,14 @@ public class UserService {
         }
 
         // 비밀번호 재확인 체크
-        if (!request.getPassword().equals(request.getConfirmPassword())) {
+        if (!request.getPassword().equals(request.getPasswordCheck())) {
             throw new RuntimeException("비밀번호와 비밀번호 확인이 일치하지 않습니다!");
         }
 
         // jobType 유효성 검사
-        if (!request.getJobType().equals("firefighter") &&
-                !request.getJobType().equals("police")) {
-            throw new RuntimeException("jobType이 잘못되었습니다! (firefighter / police)");
+        if (!request.getJob().equals("firefighter") &&
+                !request.getJob().equals("police")) {
+            throw new RuntimeException("job이 잘못되었습니다! (firefighter / police)");
         }
 
         // 비밀번호 암호화 후 저장
@@ -40,7 +40,7 @@ public class UserService {
                 .email(request.getEmail())
 //                .name(request.getName())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .jobType(request.getJobType())
+                .job(request.getJob())
                 .build();
 
         userRepository.save(user);

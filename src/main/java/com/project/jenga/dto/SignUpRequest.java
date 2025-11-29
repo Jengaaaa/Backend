@@ -9,6 +9,6 @@ public class SignUpRequest {
     private String email;
 //    private String name;
     private String password;
-    private String confirmPassword;
-    private String jobType;
+    private String passwordCheck;
+    private String job;
 }
