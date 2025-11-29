@@ -24,17 +24,17 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String jobType;
+    private String job;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
     @Builder
-    public User(String email, String name, String password, String jobType) {
+    public User(String email, String name, String password, String job) {
         this.email = email;
 //        this.name = name;
         this.password = password;
-        this.jobType = jobType;
+        this.job = job;
         this.createdAt = LocalDateTime.now();
     }
 
