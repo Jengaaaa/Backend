@@ -30,17 +30,17 @@ public class UserService {
         }
 
         // jobType 유효성 검사
-        if (!request.getJob().equals("firefighter") &&
-                !request.getJob().equals("police")) {
-            throw new RuntimeException("job이 잘못되었습니다! (firefighter / police)");
-        }
+//        if (!request.getJob().equals("firefighter") &&
+//                !request.getJob().equals("police")) {
+//            throw new RuntimeException("job이 잘못되었습니다! (firefighter / police)");
+//        }
 
         // 비밀번호 암호화 후 저장
         User user = User.builder()
                 .email(request.getEmail())
 //                .name(request.getName())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .job(request.getJob())
+//                .job(request.getJob())
                 .build();
 
         userRepository.save(user);
