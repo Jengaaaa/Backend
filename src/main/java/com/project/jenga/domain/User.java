@@ -17,14 +17,14 @@ public class User {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-//    @Column(nullable = false, unique = true, length = 50)
-//    private String name;
+    @Column(nullable = false, length = 50)
+    private String name;
 
     @Column(nullable = false)
     private String password;
 
-//    @Column(nullable = false)
-//    private String job;
+    @Column
+    private String job;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
@@ -32,13 +32,17 @@ public class User {
     @Builder
     public User(String email, String name, String password, String job) {
         this.email = email;
-//        this.name = name;
+        this.name = name;
         this.password = password;
-//        this.job = job;
+        this.job = job;
         this.createdAt = LocalDateTime.now();
     }
 
     public void updatePassword(String encodedPassword) {
         this.password = encodedPassword;
+    }
+
+    public void updateJob(String job) {
+        this.job = job;
     }
 }
