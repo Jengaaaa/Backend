@@ -1,4 +1,4 @@
-package com.project.jenga.dto.fastapi;
+package com.project.jenga.dto.analysis;
 
 import lombok.Getter;
 

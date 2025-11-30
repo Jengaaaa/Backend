@@ -1,6 +1,9 @@
 package com.project.jenga.controller;
 
-import com.project.jenga.dto.*;
+import com.project.jenga.dto.analysis.AudioRequest;
+import com.project.jenga.dto.analysis.FrameRequest;
+import com.project.jenga.dto.analysis.InitRequest;
+import com.project.jenga.dto.analysis.ResultResponse;
 import com.project.jenga.service.AnalysisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
