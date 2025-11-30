@@ -1,6 +1,6 @@
 package com.project.jenga.controller;
 
-import com.project.jenga.dto.*;
+import com.project.jenga.dto.user.*;
 import com.project.jenga.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

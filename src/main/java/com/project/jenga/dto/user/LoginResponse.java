@@ -1,4 +1,4 @@
-package com.project.jenga.dto;
+package com.project.jenga.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
