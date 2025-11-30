@@ -31,8 +31,8 @@ public class UserService {
         String encoded = passwordEncoder.encode(request.getPassword());
 
         User user = User.builder()
+                .name(request.getName())    
                 .email(request.getEmail())
-                .name(request.getName())
                 .password(encoded)
                 .job(null)
                 .build();

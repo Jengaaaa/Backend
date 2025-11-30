@@ -14,11 +14,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String email;
-
     @Column(nullable = false, length = 50)
     private String name;
+
+    @Column(nullable = false, unique = true, length = 100)
+    private String email;
 
     @Column(nullable = false)
     private String password;
@@ -31,8 +31,8 @@ public class User {
 
     @Builder
     public User(String email, String name, String password, String job) {
-        this.email = email;
         this.name = name;
+        this.email = email;
         this.password = password;
         this.job = job;
         this.createdAt = LocalDateTime.now();
