@@ -23,8 +23,8 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String job;
+//    @Column(nullable = false)
+//    private String job;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
@@ -34,7 +34,7 @@ public class User {
         this.email = email;
 //        this.name = name;
         this.password = password;
-        this.job = job;
+//        this.job = job;
         this.createdAt = LocalDateTime.now();
     }
 
