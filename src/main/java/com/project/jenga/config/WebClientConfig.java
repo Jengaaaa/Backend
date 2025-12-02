@@ -10,7 +10,7 @@ public class WebClientConfig {
     @Bean
     public WebClient fastApiClient() {
         return WebClient.builder()
-                .baseUrl("http://fusion:8000")
+                .baseUrl("http://localhost:8000")
                 .build();
     }
 }
