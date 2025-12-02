@@ -30,7 +30,8 @@ public class User {
     private LocalDateTime createdAt;
 
     @Builder
-    public User(String email, String name, String password, String job) {
+
+    public User(String name, String email, String password, String job) {
         this.name = name;
         this.email = email;
         this.password = password;

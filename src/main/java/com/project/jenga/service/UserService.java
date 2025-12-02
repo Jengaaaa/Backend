@@ -1,7 +1,10 @@
 package com.project.jenga.service;
 
-import com.project.jenga.dto.*;
 import com.project.jenga.domain.User;
+import com.project.jenga.dto.user.LoginRequest;
+import com.project.jenga.dto.user.LoginResponse;
+import com.project.jenga.dto.user.SignUpRequest;
+import com.project.jenga.dto.user.SignUpResponse;
 import com.project.jenga.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,7 +34,7 @@ public class UserService {
         String encoded = passwordEncoder.encode(request.getPassword());
 
         User user = User.builder()
-                .name(request.getName())    
+                .name(request.getName())
                 .email(request.getEmail())
                 .password(encoded)
                 .job(null)

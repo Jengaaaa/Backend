@@ -1,4 +1,4 @@
-package com.project.jenga.dto;
+package com.project.jenga.dto.user;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,5 +10,4 @@ public class SignUpRequest {
     private String email;
     private String password;
     private String passwordCheck;
-    private String job;
 }
