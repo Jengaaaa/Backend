@@ -14,6 +14,6 @@ public class DepressionResultService {
     private final DepressionResultRepository depressionResultRepository;
 
     public List<DepressionResult> getHistory(Long userId) {
-        return depressionResultRepository.findByUserIdOrderByCreatedAtDesc(userId);
+        return depressionResultRepository.findAllByUserIdOrderByCreatedAtDesc(userId);
     }
 }
